@@ -7,14 +7,14 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === '-ping') {
-    	message.reply('Pong!');
+    if (message.content === '-hello') {
+    	message.reply('Hello how are you!');
   	}
 });
 
 client.on('message', message => {
-    if (message.content === '-bing') {
-    	message.reply('Bong!');
+    if (message.content === "I'm good and you") {
+    	message.reply("I'm good too");
   	}
 });
 
