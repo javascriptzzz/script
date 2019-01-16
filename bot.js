@@ -2,8 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log('I am ready!');
-    console.log('{client.user.name}');
+    console.log('Logged in as');
+    console.log('Test bot');
+    console.log('530689434346061824');
 });
 
 client.on('message', message => {
