@@ -26,8 +26,9 @@ client.on('message', message => {
 });
 
 client.on('message', message ==> {
-    if (message.content === 'everyone') {
-        message.send.channel('@everyone');
-
+    if (message.content === '-help') {
+        message.reply('-help - shows this help message');
+    }
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
