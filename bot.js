@@ -24,29 +24,4 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-  if (message.author.bot) return
-  if (message.channel.type === 'dm') return
-
-  let messageArray = message.content.split(' ')
-  let command = messageArray[0]
-  let args = messageArray.slice(1)
-
-  if (!command.startsWith(prefix)) return
-
-  if (command === `${prefix}userinfo`) {
-    let embed = new Discord.RichEmbed()
-      .setAuthor(message.author.username)
-      .setColor('#3498db')
-      .setThumbnail(`${message.author.avatarURL}`)
-      .addField(
-        'Name',
-        `${message.author.username}#${message.author.discriminator}`
-      )
-      .addField('ID', message.author.id)
-
-    message.reply("I've Sent Your User Info Through DM!")
-    message.channel.send({ embed })
-  }
-
 client.login(process.env.BOT_TOKEN);
