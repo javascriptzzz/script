@@ -11,7 +11,7 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', message => {
+client.on('message', msg => {
   // If the message is "how to embed"
   if (message.content === '-embed') {
     // We can create embeds using the MessageEmbed constructor
