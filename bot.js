@@ -11,11 +11,11 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', message => {
+client.on('message', msg => {
   // If the message is "what is my avatar"
   if (message.content === 'what is my avatar') {
     // Send the user's avatar URL
-    message.reply(message.author.displayAvatarURL());
+    msg.reply(message.author.displayAvatarURL());
   }
 });
 
