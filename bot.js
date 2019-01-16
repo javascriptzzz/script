@@ -6,15 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
-client.on('message', msg => {
-  // If the message is "what is my avatar"
-  if (message.content === 'what is my avatar') {
-    // Send the user's avatar URL
+  if (msg.content === '-avatar') {
     msg.reply(message.author.displayAvatarURL());
   }
 });
