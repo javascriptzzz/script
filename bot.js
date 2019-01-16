@@ -17,4 +17,10 @@ client.on('message', message => {
   	}
 });
 
+client.on('message', message => {
+  if (message.content === '-avatar') {
+    message.channel.send(message.author.displayAvatarURL);
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
