@@ -24,15 +24,5 @@ client.on('message', message => {
   	}
 });
 
-client.on('message', message => {
-  if (message.content === '!avatar') {
-    var member = message.mentions.members.first();
-    let embed = new Discord.RichEmbed()
-  .setImage(message.member.avatarURL)
-  .setColor('#275BF0')
-    message.channel.send(embed)
-  }
-});
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
