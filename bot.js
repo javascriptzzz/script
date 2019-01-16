@@ -24,26 +24,29 @@ client.on('message', message => {
   }
 });
 
-if (`${prefix}help` === 'command') {
-    let embed = new Discord.RichEmbed()
-      .addField('!help', 'gives you this current information')
-      .setTitle('Help')
-      .setColor('#3498db')
-      .addField(
-        '!userinfo',
-        'gives you info about a user(currently being worked on)'
-      )
-      .addField(
-        '!serverinfo',
-        'gives you info about a server(currently working on it)'
-      )
-      .addField('link to support server', 'https://discord.gg/NZ2Zvjm')
-      .addField(
-        'invite link for bot',
-        'https://discordapp.com/api/oauth2/authorize?client_id=449983742224760853&permissions=84993&scope=bot'
-      )
+client.on('message', message => {
+  if (message.author.bot) return
+  if (message.channel.type === 'dm') return
 
-    message.reply("here's a list of commands that i'm able to do")
+  let messageArray = message.content.split(' ')
+  let command = messageArray[0]
+  let args = messageArray.slice(1)
+
+  if (!command.startsWith(prefix)) return
+
+  if (command === `${prefix}userinfo`) {
+    let embed = new Discord.RichEmbed()
+      .setAuthor(message.author.username)
+      .setColor('#3498db')
+      .setThumbnail(`${message.author.avatarURL}`)
+      .addField(
+        'Name',
+        `${message.author.username}#${message.author.discriminator}`
+      )
+      .addField('ID', message.author.id)
+
+    message.reply("I've Sent Your User Info Through DM!")
     message.channel.send({ embed })
+  }
 
 client.login(process.env.BOT_TOKEN);
