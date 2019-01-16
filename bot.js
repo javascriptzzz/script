@@ -1,12 +1,9 @@
-const Discord = require("discord.js");
-const moment = require("moment");
-require("moment-duration-format");
-const status = {
-  online: "Online",
-  idle: "Idle",
-  dnd: "Do Not Disturb",
-  offline: "Offline/Invisible"
-};
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
 const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
 exports.run = (client, msg, args) => {
   const member = msg.mentions.members.first() || msg.guild.members.get(args[0]) || msg.member;
