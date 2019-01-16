@@ -14,6 +14,12 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if (message.content === '-help') {
+    	message.reply('help - shows this help command');
+  	}
+});
+
+client.on('message', message => {
     if (message.content === "I'm good and you") {
     	message.reply("I'm good too");
   	}
@@ -23,12 +29,6 @@ client.on('message', message => {
     if (message.content === '-test') {
     	message.reply('test!');
   	}
-});
-
-client.on('message', message ==> {
-    if (message.content === '-help') {
-        message.reply('-help - shows this help message');
-    }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
