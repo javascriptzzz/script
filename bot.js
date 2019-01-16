@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    console.log('${client.user.name}');
+    console.log('${client.username}');
 });
 
 client.on('message', message => {
