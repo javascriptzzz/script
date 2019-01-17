@@ -1,6 +1,7 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = "d";
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -29,5 +30,12 @@ client.on('message', message => {
         message.reply(message.author.displayAvatarURL);
     }
 });
+
+}else if(msg.startsWith(pix+"ping")){
+        message.channel.send({embed:{
+            color: 0xd1250e,
+            description: "Pong  " + Math.round(bot.ping) + "ms " + "🏓"
+        }});
+    }
 
 client.login(process.env.BOT_TOKEN);
