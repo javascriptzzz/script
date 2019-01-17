@@ -8,15 +8,14 @@ client.on("ready", () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.channel.send('Pong!');
+    if (message.content === '-ping') {
+    	message.reply('Pong!');
   	}
 });
 
 client.on('message', message => {
-    if (message.content === '-ping') {
-    	message.reply('Pong!');
-      message.react("🤔");
+    if (message.content === 'hmm') {
+        message.react("🤔");
   	}
 });
 
@@ -25,5 +24,9 @@ client.on('message', message => {
     message.channel.send(message.author.displayAvatarURL);
   }
 });
+
+client.on('message', message => {
+  if (message.content === 'lol') {
+    message.react("😂");
 
 client.login(process.env.BOT_TOKEN);
