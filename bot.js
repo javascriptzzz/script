@@ -44,7 +44,7 @@ function turnToEmbed(object) {
     .addField("Description:",object.description,true)
     .addField("Usage:",object.usage,true)
     .setFooter("And voila :P");
-};
+}
 
 message.channel.send({ embed: turnToEmbed(help) });
 
