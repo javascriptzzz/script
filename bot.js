@@ -37,6 +37,5 @@ client.on('message', message => {
             color: 0xd1250e,
             description: "Pong  " + Math.round(client.ping) + "ms " + "🏓"
      }
-});
  
 client.login(process.env.BOT_TOKEN);
