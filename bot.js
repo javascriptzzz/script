@@ -6,21 +6,6 @@ client.on("ready", () => {
     console.log('Bot has started');
 });
 
-client.on("guildMemberAdd", (member) => { // Check out previous chapter for information about this event
-let guild = member.guild; 
-let memberTag = member.user.tag; 
-if(guild.systemChannel){
-	guild.systemChannel.send(new Discord.RichEmbed() // Creating instance of Discord.RichEmbed
-	.setTitle("A new user joined") // Calling method setTitle on constructor. 
-	.setDescription(memberTag + " has joined the guild") // Setting embed description
-	.setThumbnail(member.user.displayAvatarURL) // The image on the top right; method requires an url, not a path to file!
-	.addField("Members now", member.guild.memberCount) // Adds a field; First parameter is the title and the second is the value.
-	.setTimestamp() // Sets a timestamp at the end of the embed
-	message.channel.send(embed);
-	);
-}
-});
-
 client.on('message', message => {
     if (message.content === '-ping') {
     	message.reply('Pong!');
@@ -44,5 +29,23 @@ client.on('message', message => {
     message.react("😂");
   }
 });
+
+var help = {
+  name: 'help',
+  description: 'Shows all the commands in the bot',
+  usage: 'rhelp',
+  inHelp: 'yes'
+};
+
+function turnToEmbed(object) {
+  return new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("Some handy dandy info on: "+object.title)
+    .addField("Description:",object.description,true)
+    .addField("Usage:",object.usage,true)
+    .setFooter("And voila :P");
+};
+
+message.channel.send({ embed: turnToEmbed(help) });
 
 client.login(process.env.BOT_TOKEN);
