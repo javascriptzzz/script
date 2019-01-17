@@ -20,7 +20,13 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === 'hmm') {
-        message.react('👙');
+        message.react('🤔');
+    }
+});
+
+client.on('message', message => {
+    if (message.content === '-avatar') {
+        message.reply(message.author.displayAvatarURL);
     }
 });
 
