@@ -33,7 +33,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === '-ping') {
-        message.channel.send({embed:{
+        message.channel.send({embed:
         color: 0xd1250e,
         description: "Pong  " + Math.round(bot.ping) + "ms " + "🏓"
      }
