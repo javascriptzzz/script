@@ -16,6 +16,7 @@ if(guild.systemChannel){
 	.setThumbnail(member.user.displayAvatarURL) // The image on the top right; method requires an url, not a path to file!
 	.addField("Members now", member.guild.memberCount) // Adds a field; First parameter is the title and the second is the value.
 	.setTimestamp() // Sets a timestamp at the end of the embed
+	message.channel.send(embed);
 	);
 }
 });
