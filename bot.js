@@ -28,5 +28,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (message.content === 'lol') {
     message.react("😂");
+  }
+});
 
 client.login(process.env.BOT_TOKEN);
