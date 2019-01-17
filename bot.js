@@ -31,11 +31,12 @@ client.on('message', message => {
     }
 });
 
-}else if(msg.startsWith(pix+"ping")){
+client.on('message', message => {
+    if (message.content === '-ping') {
         message.channel.send({embed:{
-            color: 0xd1250e,
-            description: "Pong  " + Math.round(bot.ping) + "ms " + "🏓"
-        }});
-    }
-
+        color: 0xd1250e,
+        description: "Pong  " + Math.round(bot.ping) + "ms " + "🏓"
+     }
+});
+ 
 client.login(process.env.BOT_TOKEN);
