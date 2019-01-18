@@ -30,12 +30,5 @@ client.on('message', message => {
         message.reply(message.author.displayAvatarURL);
     }
 });
-
-client.on('message', message => {
-    if (message.content === '-ping') {
-        message.channel.send({embed:{
-            color: 0xd1250e,
-            description: "Pong  " + Math.round(client.ping) + "ms " + "🏓"
-     }
  
 client.login(process.env.BOT_TOKEN);
