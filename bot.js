@@ -1,4 +1,4 @@
-const botsettings = require("./botsettings.json");
+const botsettings = require("./package.json");
 const Discord = require("discord.js");
 const prefix = botSettings.prefix;
 
