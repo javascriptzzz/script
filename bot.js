@@ -5,13 +5,13 @@ const prefix = botSettings.prefix;
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
-  console.log("Bot is ready! ${bot.user.username}");
+   console.log("Bot is ready! ${bot.user.username}");
   
-  try {
-      Let link = await bot.generateInvite(["ADMINISTRATOR"]);
-      console.log(link);
-  } catch(e) {
-      console.log(e.stack);
+   try {
+     Let link = await bot.generateInvite(["ADMINISTRATOR"]);
+     console.log(link);
+   } catch(e) {
+     console.log(e.stack);
 });
 
 bot.on("message", async message => {
@@ -22,7 +22,7 @@ bot.on("message", async message => {
   Let command = messageArray[0];
   Let args = messageArray.slice(1);
   
-  if(!command.startswith(prefix)) return;
+  if(command.startswith(prefix)) return;
   
   if(command === `${prefix}userinfo`) {
     Let embed = new Discord.RichEmbed()
