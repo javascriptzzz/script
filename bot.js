@@ -15,20 +15,21 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return
-    
-    Let messageArray = message.content.split(" ");
-    Let command = messageArray[0];
-    Let args = messageArray.slice(1);
-    if(!command.startswith(prefix)) return;
-    
-    if(command === `${prefix}userinfo`) {
-        Let embed = new Discord.RichEmbed()
-            .setAuthor(message.author.username);
-            .setDescription("This is the user's info");
-        message.channel.sendEmbed(embed);
-    }
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return
+  
+  Let messageArray = message.content.split(" ");
+  Let command = messageArray[0];
+  Let args = messageArray.slice(1);
+  
+  if(!command.startswith(prefix)) return;
+  
+  if(command === `${prefix}userinfo`) {
+    Let embed = new Discord.RichEmbed()
+      .setAuthor(message.author.username);
+      .setDescription("This is the user's info");
+    message.channel.sendEmbed(embed);
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
