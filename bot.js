@@ -1,31 +1,28 @@
-const { Client, RichEmbed } = require('discord.js');
+const botsettings = require("./botsettings.json");
+const Discord = require("discord.js");
+const prefix = botSettings.prefix;
 
-// Create an instance of a Discord client
-const client = new Client();
+const bot = new Discord.Client({disableEveryone: true});
 
-/**
- * The ready event is vital, it means that only _after_ this will your bot start reacting to information
- * received from Discord
- */
-client.on('ready', () => {
-  console.log('I am ready!');
+bot.on("ready", async () => {
+  console.log("Bot is ready! ${bot.user.username}");
 });
 
-client.on('message', message => {
-  // If the message is "how to embed"
-  if (message.content === 'how to embed') {
-    Let embed = new RichEmbed()
-      // Set the title of the field
-      .setTitle('A slick little embed')
-      // Set the color of the embed
-      .setColor(0xFF0000)
-      .addfield("name")
-      .addfield("test");
-      // Set the main content of the embed
-      .setDescription('Hello, this is a slick embed!');
-    // Send the embed to the same channel as the message
-    message.channel.send(embed);
-  }
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return
+    
+    Let messageArray = message.content.split(" ");
+    Let command = messageArray[0];
+    Let args = messageArray.slice(1);
+    if(!command.startswith(botSettings.prefix)) return;
+    
+    if(command === `${prefix}userinfo`) {
+        Let embed = new Discord.RichEmbed()
+            .setAuthor(message.author.username);
+            .setDescription("This is the user's info");
+        message.channel.sendEmbed(embed);
+    }
 });
- 
-client.login(process.env.BOT_TOKEN);
+
+bot.login(process.env.BOT_TOKEN);
