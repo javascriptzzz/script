@@ -21,7 +21,7 @@ bot.on("message", async message => {
     Let messageArray = message.content.split(" ");
     Let command = messageArray[0];
     Let args = messageArray.slice(1);
-    if(!command.startswith(botSettings.prefix)) return;
+    if(!command.startswith(prefix)) return;
     
     if(command === `${prefix}userinfo`) {
         Let embed = new Discord.RichEmbed()
