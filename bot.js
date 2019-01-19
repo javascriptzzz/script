@@ -12,6 +12,8 @@ bot.on("ready", async () => {
      console.log(link);
    } catch(e) {
       console.log(e.stack);
+   }
+   
 });
 
 bot.on("message", async message => {
