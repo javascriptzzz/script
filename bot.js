@@ -5,7 +5,7 @@ const prefix = botSettings.prefix;
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
-   console.log("Bot is ready! ${bot.user.username}");
+  console.log("Bot is ready! ${bot.user.username}");
   
   try {
      Let link = await bot.generateInvite(["ADMINISTRATOR"]);
