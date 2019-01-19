@@ -44,9 +44,10 @@ bot.on("message", async message => {
     if(!kickChannel) return message.channel.send("Can't find incidents channel.");
 
     message.guild.member(kUser).kick(kReason);
-    kick.channel.send(kickEmbed);
+    kickChannel.send(kickEmbed);
 
     return;
+  
   });
 
 bot.login(process.env.BOT_TOKEN);
