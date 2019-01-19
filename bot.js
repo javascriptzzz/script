@@ -17,7 +17,7 @@ bot.on("message", async message => {
   let command = messageArray[0];
   let args = messageArray.slice(1);
   
-  if(!command.startswith(prefix)) return;
+  if(!command.startsWith(prefix)) return;
 
   if(command === `${prefix}serverinfo`){
 
@@ -34,6 +34,7 @@ bot.on("message", async message => {
     message.channel.send(serverembed);
     
     return;
+  
   }
 });
 
