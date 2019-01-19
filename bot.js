@@ -21,19 +21,18 @@ bot.on("message", async message => {
 
   if(command === `${prefix}serverinfo`) {
 
-    let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
-    .setDescription("Server Information")
-    .setColor("#15f153")
-    .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined", message.member.joinedAt)
-    .addField("Total Members", message.guild.memberCount);
+     let sicon = message.guild.iconURL;
+     let serverembed = new Discord.RichEmbed()
+     .setDescription("Server Information")
+     .setColor("#15f153")
+     .setThumbnail(sicon)
+     .addField("Server Name", message.guild.name)
+     .addField("Created On", message.guild.createdAt)
+     .addField("You Joined", message.member.joinedAt)
+     .addField("Total Members", message.guild.memberCount);
 
-    message.channel.send(serverembed);
-  
-  }
+     message.channel.send(serverembed);
+   }
 });
 
 bot.on("message", async message => {
@@ -47,7 +46,7 @@ bot.on("message", async message => {
   if(!command.startsWith(prefix)) return;
 
   if(command === `${prefix}userinfo`) {
-    console.log("user have used userinfo command");
+     console.log("user have used userinfo command");
   }
 });
 
