@@ -1,6 +1,5 @@
-const botsettings = require("./botSettings.json");
 const Discord = require("discord.js");
-const prefix = botSettings.prefix;
+const prefix = "-";
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -16,7 +15,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  let prefix = botsettings.prefix;
+  let prefix = "-";
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
