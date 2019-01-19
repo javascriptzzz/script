@@ -32,8 +32,6 @@ bot.on("message", async message => {
     .addField("Total Members", message.guild.memberCount);
 
     message.channel.send(serverembed);
-    
-    return;
   
   }
 });
