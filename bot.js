@@ -6,6 +6,12 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
   console.log("Bot is ready! ${bot.user.username}");
+  
+  try {
+      Let link = await bot.generateInvite(["ADMINISTRATOR"]);
+      console.log(link);
+  } catch(e) {
+      console.log(e.stack);
 });
 
 bot.on("message", async message => {
