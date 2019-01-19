@@ -18,7 +18,7 @@ bot.on("message", async message => {
   
   if(!command.startswith(prefix)) return;
 
-  if(!command === `${prefix}serverinfo`){
+  if(command === `${prefix}serverinfo`){
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
