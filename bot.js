@@ -47,7 +47,8 @@ bot.on("message", async message => {
     kickChannel.send(kickEmbed);
 
     return;
-  
   }
+  
+});
 
 bot.login(process.env.BOT_TOKEN);
