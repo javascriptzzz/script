@@ -44,18 +44,18 @@ bot.on("message", async message => {
 
     if(command === `${prefix}serverinfo`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(`${message.guild.name} - Information`, message.guild.iconURL)
+            .setAuthor(`${message.server.name} - Information`, message.server.iconURL)
             .setColor("#f4df42")
-            .addField("Server Owner", message.guild.owner, true)
-            .addField("Server Region", message.guild.region, true)
-            .addField("Channel Count", message.guild.channels.size, true)
-            .addField("Total Member Count", message.guild.memberCount)
+            .addField("Server Owner", message.server.owner, true)
+            .addField("Server Region", message.server.region, true)
+            .addField("Channel Count", message.server.channels.size, true)
+            .addField("Total Member Count", message.server.memberCount)
         
-            .addField("Humans", checkMembers(message.guild), true)
-            .addField("Bots", checkBots(message.guild), true)
-            .addField("Verification Level", message.guild.verificationLevel, true)
+            .addField("Humans", checkMembers(message.server), true)
+            .addField("Bots", checkBots(message.server), true)
+            .addField("Verification Level", message.server.verificationLevel, true)
             .setFooter("Guild Created At:")
-            .setTimestamp(message.guild.createdAt);
+            .setTimestamp(message.server.createdAt);
     
         message.channel.sendEmbed(embed);
     }
