@@ -54,8 +54,8 @@ bot.on("message", async message => {
     }
 
     if(command === `${prefix}mute`) {
-        let toMute = message.mentions.users.first() || message.guild.member.get(args[0]);
-        if(!toMute) return message.channel.sendMessage("You did not specify a user to mute");
+        let toMute = message.mentions.users.first() || message.guild.member.get(args[0])
+        if(!toMute) return message.channel.sendMessage("You did not specify a user to mute")
         
       return message.reply(toMute.username || toMute.user.username);
     }
