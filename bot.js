@@ -41,7 +41,7 @@ bot.on("message", async message => {
       
       message.channel.sendEmbed(embed);
       
-     return;
+      return;
     }
 });
 
