@@ -39,7 +39,7 @@ bot.on("message", async message => {
         if(!message.member.hasPermission("MANAGES_MESSAGES")) return message.channel.sendMessage("You do not have manage message permissions")
         if(message.channel.permissionsFor(message.member).hasPermission("MANAGES_MESSAGES"))
         
-        let toMute = message.mentions.users.first() || message.guild.members.get[0]);
+        let toMute = message.mentions.users.first() || message.guild.members.get(args[0]);
         if(!toMute) return message.channel.sendMessage("You did not specify a user mention or ID");
       
       return;
