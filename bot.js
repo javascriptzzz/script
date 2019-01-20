@@ -5,7 +5,7 @@ const prefix = botSettings.prefix;
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
-  bot.user.setPresence({ streaming: { name: 'testing the bot | by noobperson', type: 1 } });
+  bot.user.setPresence({ streaming: { name: 'testing the bot | by noobperson', type: 0 } });
   console.log(`${bot.user.username} is online!`);
 });
 
