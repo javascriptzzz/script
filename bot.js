@@ -22,11 +22,11 @@ bot.on("message", async message => {
     if(command === `${prefix}userinfo`) {
         let embed = new Discord.RichEmbed()
             .setAuthor(message.author.username)
-            .setDescription("This is the user's info")
+            .setDescription("This is the `${message.author.username}`'s info")
             .setColor("#FFFF")
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
-            .addField("ID", message.author.id)
-            .addField("Created At", message.author.createdAt)
+            .addField("ID:", message.author.id)
+            .addField("Created At:", message.author.createdAt)
     
         message.channel.sendEmbed(embed);
     }
