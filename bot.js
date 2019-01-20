@@ -49,7 +49,7 @@ bot.on("message", async message => {
         let embed = new Discord.RichEmbed()
             .setColor("#A500F7")
             .addField("Here's the user's avatar")
-            .setThumbnail(message.user.displayAvatarURL)
+            .setThumbnail(author.user.displayAvatarURL)
     
         message.channel.sendEmbed(embed);
       
