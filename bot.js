@@ -35,9 +35,7 @@ bot.on("message", async message => {
 
     if(command === `${prefix}serverinfo`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(message.author.username)
-            .setDescription("This is the {message.guild.name} server info")
-            .setColor("#FFFF")
+            .setColor("#A500F7")
             .addField("Server Name:", message.guild.name)
             .addField("ID:", message.guild.id)
             .addField("Created At:", message.guild.createdAt)
