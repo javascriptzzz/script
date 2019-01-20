@@ -5,7 +5,7 @@ const prefix = botSettings.prefix;
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
-  bot.user.setPresence({ game: { name: 'nameGoesHere', type: 0 } });
+  bot.user.setPresence({ game: { name: 'testing the bot | by noobperson', type: 0 } });
   console.log(`${bot.user.username} is online!`);
 });
 
