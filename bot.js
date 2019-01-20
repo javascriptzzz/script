@@ -42,8 +42,8 @@ bot.on("message", async message => {
         let toMute = message.mentions.users.first() || message.guild.members.get(args[0]);
         if(!toMute) return message.channel.sendMessage("You did not specify a user mention or ID");
       
-      return;
-    }
+        return;
+      }
 });
 
 bot.login(process.env.BOT_TOKEN);
