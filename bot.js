@@ -5,7 +5,7 @@ const prefix = botSettings.prefix;
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
-  bot.user.setActivity("testing the bot | by noobperson")
+  bot.user.setActivity('YouTube', { type: 'PLAYING' });
   console.log(`${bot.user.username} is online!`);
 });
 
