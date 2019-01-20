@@ -43,7 +43,18 @@ bot.on("message", async message => {
         message.channel.sendEmbed(embed);
       
       return;
-     }
+    }
+  
+    if(command === `${prefix}avatar`) {
+        let embed = new Discord.RichEmbed()
+            .setColor("#A500F7")
+            .addField("Here's the user's avatar")
+            .setThumbnail(message.user.displayAvatarURL)
+    
+        message.channel.sendEmbed(embed);
+      
+      return;
+  
 });
 
 bot.login(process.env.BOT_TOKEN);
