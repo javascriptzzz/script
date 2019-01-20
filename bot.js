@@ -48,7 +48,8 @@ bot.on("message", async message => {
     if(command === `${prefix}avatar`) {
         let embed = new Discord.RichEmbed()
             .setColor("#A500F7")
-            .addField(" ")
+            .setAuthor(message.author.name)
+            .addField("heres the user's avatar")
             .setThumbnail(message.author.displayAvatarURL)
     
         message.channel.sendEmbed(embed);
