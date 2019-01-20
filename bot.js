@@ -20,7 +20,11 @@ bot.on("message", async message => {
   if(!command.startsWith(prefix)) return;
 
   if(command === `${prefix}userinfo`) {
-     message.channel.send(message.author.username);
+     Let embed = new Discord.RichEmbed()
+         .setAuthor(message.author.username)
+         .setDescription("This is an description");
+    
+     message.channel.sendEmbed(embed);
   }
 });
 
