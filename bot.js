@@ -6,7 +6,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  
+
 });
 
 bot.on("message", async message => {
@@ -20,7 +20,7 @@ bot.on("message", async message => {
     if(!command.startsWith(prefix)) return;
 
     if(command === `${prefix}userinfo`) {
-        Let embed = new Discord.RichEmbed()
+        let embed = new Discord.RichEmbed()
             .setAuthor(message.author.username)
             .setDescription("This is an description");
     
