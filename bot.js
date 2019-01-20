@@ -10,22 +10,22 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
   
-  Let messageArray = message.content.split(" ");
-  Let command = messageArray[0];
-  Let args = messageArray.slice(1);
+    Let messageArray = message.content.split(" ");
+    Let command = messageArray[0];
+    Let args = messageArray.slice(1);
   
-  if(!command.startsWith(prefix)) return;
+    if(!command.startsWith(prefix)) return;
 
-  if(command === `${prefix}userinfo`) {
-      Let embed = new Discord.RichEmbed()
-          .setAuthor(message.author.username)
-          .setDescription("This is an description");
+    if(command === `${prefix}userinfo`) {
+        Let embed = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setDescription("This is an description");
     
-      message.channel.sendEmbed(embed);
-  }
+        message.channel.sendEmbed(embed);
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
