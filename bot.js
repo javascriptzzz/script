@@ -20,7 +20,7 @@ bot.on("message", async message => {
   if(!command.startsWith(prefix)) return;
 
   if(command === `${prefix}userinfo`) {
-     message.channel.send("test");
+     message.channel.send(`${user.username}`);
   }
 });
 
