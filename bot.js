@@ -44,7 +44,6 @@ bot.on("message", async message => {
 
     if(command === `${prefix}serverinfo`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(`${message.server.name} - Information`, message.server.iconURL)
             .setColor("#f4df42")
             .addField("Server Owner", message.server.owner, true)
             .addField("Server Region", message.server.region, true)
