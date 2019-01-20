@@ -31,17 +31,6 @@ bot.on("message", async message => {
         message.channel.sendEmbed(embed);
       
       return;
-      
-    if(command === `${prefix}serverinfo`) {
-      let embed = new Discord.RichEmbed()
-          .setDescription("This is the server info")
-          .setColor("#A500F7")
-          .addField("Server Name:", `${message.guild.name}`)
-          .addField("Server ID:", `${message.guild.id}`)
-      
-      message.channel.sendEmbed(embed);
-      
-      return;
     }
 });
 
