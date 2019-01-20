@@ -32,33 +32,6 @@ bot.on("message", async message => {
       
       return;
     }
-
-bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
-  
-    let messageArray = message.content.split(" ");
-    let command = messageArray[0];
-    let args = messageArray.slice(1);
-  
-    if(!command.startsWith(prefix)) return;
-
-    if(command === `${prefix}help`) {
-        let embed = new Discord.RichEmbed()
-            .setColor("#A500F7")
-            .addField("Help - shows this message")
-    
-        message.channel.sendEmbed(embed);
-      
-        return;
-    }
-
-    if(command === `${prefix}mute`) {
-        let toMute = message.mentions.users.first() || message.guild.member.get(args[0])
-        if(!toMute) return message.channel.sendMessage("You did not specify a user to mute")
-        
-      return message.reply(toMute.username || toMute.user.username);
-    }
 });
 
 bot.login(process.env.BOT_TOKEN);
