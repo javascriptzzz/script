@@ -48,11 +48,7 @@ bot.on("message", async message => {
             .setColor("#f4df42")
             .addField("Server Owner", message.server.owner, true)
             .addField("Server Region", message.server.region, true)
-            .addField("Channel Count", message.server.channels.size, true)
-            .addField("Total Member Count", message.server.memberCount)
         
-            .addField("Humans", checkMembers(message.server), true)
-            .addField("Bots", checkBots(message.server), true)
             .addField("Verification Level", message.server.verificationLevel, true)
             .setFooter("Guild Created At:")
             .setTimestamp(message.server.createdAt);
