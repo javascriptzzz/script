@@ -44,7 +44,6 @@ bot.on("message", async message => {
 
     if(command === `${prefix}help`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(message.author.username)
             .setDescription("theres no help command yet")
             .setColor("#FFFF")
             .addField("Help - shows this message")
