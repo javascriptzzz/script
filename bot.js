@@ -26,7 +26,7 @@ bot.on("message", async message => {
             .setColor("#FFFF")
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
             .addField("ID", message.author.id)
-            .addField("User Created", message.author.createdAt)
+            .addField("Created At", message.author.createdAt)
     
         message.channel.sendEmbed(embed);
     }
