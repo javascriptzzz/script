@@ -25,7 +25,7 @@ bot.on("message", async message => {
             .setDescription("This is the user's info")
             .setColor("#FFFF")
             .addField("Full Username:", `${message.author.username}#${message.author.discriminator}`)
-            .addField("ID:", message.author.id)
+            .addField("User ID:", message.author.id)
             .addField("Created At:", message.author.createdAt)
     
         message.channel.sendEmbed(embed);
@@ -47,9 +47,8 @@ bot.on("message", async message => {
   
     if(command === `${prefix}avatar`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(message.author.name)
-            .setDescription("heres the user's avatar")
             .addField("Username:", `${message.author.username}`)
+            .addField("User ID:", `${message.author.id}`)
             .setColor("#A500F7")
             .setThumbnail(message.author.displayAvatarURL)
     
