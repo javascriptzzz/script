@@ -44,12 +44,11 @@ bot.on("message", async message => {
 
     if(command === `${prefix}serverinfo`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(message.author.username)
             .setDescription("This is the server info")
             .setColor("#FFFF")
-            .addField("Server Name:", message.server.name)
-            .addField("ID:", message.server.id)
-            .addField("Created At:", message.server.createdAt)
+            .addField("Server Name:", server.name)
+            .addField("ID:", server.id)
+            .addField("Created At:", server.createdAt)
     
         message.channel.sendEmbed(embed);
     }
