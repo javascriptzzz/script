@@ -50,7 +50,7 @@ bot.on("message", async message => {
         
             .addField("Verification Level", message.server.verificationLevel, true)
             .setFooter("Guild Created At:")
-            .setTimestamp(message.server.createdAt);
+            .setTimestamp(message.server.createdAt)
     
         message.channel.sendEmbed(embed);
     }
