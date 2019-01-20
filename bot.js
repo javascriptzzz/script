@@ -32,6 +32,20 @@ bot.on("message", async message => {
       
       return;
     }
+
+    if(command === `${prefix}serverinfo`) {
+        let embed = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setDescription("This is the {message.guild.name} server info")
+            .setColor("#FFFF")
+            .addField("Server Name:", message.guild.name)
+            .addField("ID:", message.guild.id)
+            .addField("Created At:", message.guild.createdAt)
+    
+        message.channel.sendEmbed(embed);
+      
+      return;
+     }
 });
 
 bot.login(process.env.BOT_TOKEN);
