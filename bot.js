@@ -32,6 +32,18 @@ bot.on("message", async message => {
       
       return;
     }
+
+    if(!command.startsWith(prefix)) return;
+
+    if(command === `${prefix}mute`) {
+        if(!message.member.hasPermission("MANAGES_MESSAGES")) return message.channel.sendMessage("You do not have manage message permissions")
+        if(message.channel.permissionsFor(message.member).hasPermission("MANAGES_MESSAGES"))
+        
+        let toMute = message.mentions.users.first() || message.guild.members.get[0]);
+        if(!toMute) return message.channel.sendMessage("You did not specify a user mention or ID");
+      
+      return;
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
