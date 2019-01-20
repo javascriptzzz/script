@@ -31,16 +31,17 @@ bot.on("message", async message => {
         message.channel.sendEmbed(embed);
       
       return;
-    }
-
-    if(!command.startsWith(prefix)) return;
-
-    if(command === `${prefix}mute`) {
-        if(!message.member.hasPermission("MANAGES_MESSAGES")) return message.channel.sendMessage("You do not have manage message permissions")
-        if(message.channel.permissionsFor(message.member).hasPermission("MANAGES_MESSAGES"))
-        
-        let toMute = message.mentions.users.first() || message.guild.members.get(args[0]);
-        if(!toMute) return message.channel.sendMessage("You did not specify a user mention or ID");
+      
+    if(command === `${prefix}serverinfo`) {
+      let embed = new Discord.RichEmbed()
+          .setDescription("This is the server info")
+          .setColor("#A500F7")
+          .addField("Server Name:", `${message.guild.name}`)
+          .addField("Server ID:", `${message.guild.id}`)
+      
+      message.channel.sendEmbed(embed);
+      
+     return;
     }
 });
 
