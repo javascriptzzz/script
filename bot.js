@@ -42,16 +42,12 @@ bot.on("message", async message => {
   
     if(!command.startsWith(prefix)) return;
 
-    if(command === `${prefix}serverinfo`) {
+    if(command === `${prefix}help`) {
         let embed = new Discord.RichEmbed()
-            .setAuthor(message.server.name)
-            .setColor("#f4df42")
-            .addField("Server Owner", message.server.owner, true)
-            .addField("Server Region", message.server.region, true)
-        
-            .addField("Verification Level", message.server.verificationLevel, true)
-            .setFooter("Guild Created At:")
-            .setTimestamp(message.server.createdAt)
+            .setAuthor(message.author.username)
+            .setDescription("theres no help command yet")
+            .setColor("#FFFF")
+            .addField("Help - shows this message")
     
         message.channel.sendEmbed(embed);
     }
