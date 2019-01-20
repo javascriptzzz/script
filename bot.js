@@ -12,7 +12,7 @@ bot.on("ready", async () => {
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-
+  
   Let messageArray = message.content.split(" ");
   Let command = messageArray[0];
   Let args = messageArray.slice(1);
