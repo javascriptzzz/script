@@ -59,8 +59,9 @@ bot.on("message", async message => {
       
     if(command === `${prefix}test`) {
       let embed = new Discord.RichEmbed()
-          .addField("test")
-          .addField("you pinged me haha")
+          .addField("test:", `${message.author.username}`)
+          .addField("you pinged me haha", `${message.author.id}`)
+          .setColor("#A500F7")
       
       message.channel.sendEmbed(embed);
     }
