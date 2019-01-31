@@ -56,6 +56,14 @@ bot.on("message", async message => {
       
       return;
     }
+      
+    if(command === `${prefix}test`) {
+      let embed = new Discord.RichEmbed()
+          .addField("test")
+          .addField("you pinged me haha")
+      
+      message.channel.sendEmbed(embed);
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
