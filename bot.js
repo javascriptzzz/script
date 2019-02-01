@@ -65,6 +65,14 @@ bot.on("message", async message => {
       
       message.channel.sendEmbed(embed);
     }
+    
+    if(command === `${prefix}hello`) {
+      let embed = new Discord.RichEmbed()
+          .addField("hello", `$(message.author.username}`)
+          .setColor("#A500F7")
+      
+      message.channel.sendEmbed(embed);
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
