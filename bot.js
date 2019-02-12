@@ -1,9 +1,10 @@
-const botSettings = require("./botsettings.json");
-const Discord = require("discord.js");
 const request = require('request');
-const prefix = botSettings.prefix;
 
-const bot = new Discord.Client({disableEveryone: true});
+var Discord = require("discord.js");
+
+var bot = new Discord.Client();
+//Replace `-` with your desired prefix for the command
+const prefix = "-"
 
 bot.on("ready", async () => {
   bot.user.setPresence(`testing the bot | by noobperson`, { url: 'https://www.twitch.tv/noobperson2'});
