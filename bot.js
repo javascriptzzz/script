@@ -11,7 +11,7 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async (msg) => {
-  if (msg.content.startsWith(({prefix} + `-ratings `)) {
+  if (msg.content.startsWith({prefix} + `-ratings `) {
         var content = msg.content
         var parts = content.split(" ");
         var username = parts[1];
