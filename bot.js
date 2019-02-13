@@ -16,7 +16,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', async (msg) => {
-    if (msg.content.startsWith((prefix) + `tanki `)) {
+    if (msg.content.startsWith({prefix} + `tanki `)) {
         var content = msg.content
         var parts = content.split(" ");
         var username = parts[1];
