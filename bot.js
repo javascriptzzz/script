@@ -5,14 +5,12 @@ var Discord = require("discord.js");
 var bot = new Discord.Client();
 //Replace `-` with your desired prefix for the command
 const prefix = "-"
+//Replace `token` with your bot's token
+const token = 'token'
 
-bot.on("ready", async () => {
-  bot.user.setPresence(`testing the bot | by noobperson`, { url: 'https://www.twitch.tv/noobperson2'});
-  console.log(`${bot.user.username} is online!`);
-});
-
-bot.on("message", async (msg) => {
-  if (msg.content.startsWith({prefix} + `-ratings `) {
+//tanki command
+bot.on('message', async (msg) => {
+    if (msg.content.startsWith((prefix) + `tanki `)) {
         var content = msg.content
         var parts = content.split(" ");
         var username = parts[1];
@@ -241,6 +239,15 @@ bot.on("message", async (msg) => {
             .setFooter("『Geop』#4066", "https://cdn.discordapp.com/avatars/216156825978929152/4726ea8789285323ca03e995b9a059bf.png")
         msg.channel.send(sEmbed);
     }
+});
+
+//bot online
+bot.on('ready', () => {
+    console.log('Bot Running!');
+    bot.user.setStatus("online");
+    bot.user.setActivity((prefix) + `tanki | in ${bot.guilds.size} servers`, {
+        type: 'LISTENING'
+    });
 });
 
 bot.login(process.env.BOT_TOKEN);
