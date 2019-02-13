@@ -5,10 +5,7 @@ var Discord = require("discord.js");
 var bot = new Discord.Client();
 //Replace `-` with your desired prefix for the command
 const prefix = "-"
-//Replace `token` with your bot's token
-const token = 'token'
 
-//tanki command
 bot.on('message', async (msg) => {
     if (msg.content.startsWith((prefix) + `tanki `)) {
         var content = msg.content
