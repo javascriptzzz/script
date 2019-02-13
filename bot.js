@@ -4,7 +4,16 @@ var Discord = require("discord.js");
 
 var bot = new Discord.Client();
 //Replace `-` with your desired prefix for the command
-const prefix = "-"
+const prefix = "-";
+
+//bot online
+bot.on('ready', () => {
+    console.log('Bot Running!');
+    bot.user.setStatus("online");
+    bot.user.setActivity((prefix) + `tanki | in ${bot.guilds.size} servers`, {
+        type: 'LISTENING'
+    });
+});
 
 bot.on('message', async (msg) => {
     if (msg.content.startsWith((prefix) + `tanki `)) {
@@ -236,15 +245,6 @@ bot.on('message', async (msg) => {
             .setFooter("『Geop』#4066", "https://cdn.discordapp.com/avatars/216156825978929152/4726ea8789285323ca03e995b9a059bf.png")
         msg.channel.send(sEmbed);
     }
-});
-
-//bot online
-bot.on('ready', () => {
-    console.log('Bot Running!');
-    bot.user.setStatus("online");
-    bot.user.setActivity((prefix) + `tanki | in ${bot.guilds.size} servers`, {
-        type: 'LISTENING'
-    });
 });
 
 bot.login(process.env.BOT_TOKEN);
