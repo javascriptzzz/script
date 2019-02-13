@@ -10,7 +10,7 @@ const prefix = "-";
 bot.on('ready', () => {
     console.log('Bot Running!');
     bot.user.setStatus("online");
-    bot.user.setActivity((prefix) + `tanki | in ${bot.guilds.size} servers`, {
+    bot.user.setActivity({prefix} + `tanki | in ${bot.guilds.size} servers`, {
         type: 'LISTENING'
     });
 });
