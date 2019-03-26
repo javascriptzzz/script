@@ -71,8 +71,7 @@ bot.on("message", async message => {
   if(command === `${prefix}ban`) {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
     if(!member)
