@@ -4,9 +4,8 @@ const prefix = "-";
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
+  bot.user.setGame("testing");
   console.log(`${bot.user.username} is online!`);
-  
-  bot.user.setGame("testing");  
 });
 
 bot.on("message", async message => {
