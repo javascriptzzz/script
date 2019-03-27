@@ -39,6 +39,7 @@ bot.on("message", async message => {
     message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
+  
   }
   
   if(command === `${prefix}kick`) {
@@ -84,7 +85,8 @@ bot.on("message", async message => {
     
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+    message.reply(`${member.user.username} has been banned by ${message.author.username} reason: ${reason}`);
+  
   }
   
   if(command === `${prefix}purge`) {
