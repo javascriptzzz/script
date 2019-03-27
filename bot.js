@@ -64,7 +64,7 @@ bot.on("message", async message => {
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.channel.send(`${member.user.username} has been kicked by ${message.author.username} reason: ${reason}`);
+    message.channel.send(`${member.user.username} has been kicked reason: ${reason}`);
 
   }
   
@@ -84,7 +84,7 @@ bot.on("message", async message => {
     
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-    message.reply(`${member.user.username} has been banned by ${message.author.username} reason: ${reason}`);
+    message.channel.send(`${member.user.username} has been banned reason: ${reason}`);
   
   }
   
