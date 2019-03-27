@@ -18,6 +18,8 @@ bot.on("message", async message => {
   if(!command.startsWith(prefix)) return;
   
   if(command === `${prefix}userinfo`) {
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+    if(!member)
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setDescription("This is the user's info")
