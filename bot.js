@@ -131,6 +131,10 @@ bot.on("message", async message => {
     await toMute.removeRole(role);
     message.channel.send("I have unmuted them");
   }
+  
+  if(command === `${prefix}avatar`) {
+    message.reply(message.author.avatarURL);
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
