@@ -103,6 +103,17 @@ bot.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+  
+  if(command === `${prefix}mute`) {
+    if(!message.member.hasPermission("MANAGE_MESSAGE")) return message.channel.sendMessage("You dont have manage message")
+    
+    let toMute = message.mentions.users.first() || message.guild.members.get(args[0]);
+    if(!toMute) return message.channel.sendMessage("You did not specify a user mention or ID");
+    let role = message.guild.roles.find(r => r.name === "Muted");
+    if(toMute.roles.has(role.id)) return message.channel.sendMessage("This user is already muted");
+    await toMute.addRole(role);
+    message.channel.sendMessage("I have muted them");
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
