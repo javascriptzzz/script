@@ -130,6 +130,7 @@ bot.on("message", async message => {
     return message.channel.send("This user is not muted!");
   await toMute.removeRole(role);
   message.channel.send("I have unmuted them");
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
