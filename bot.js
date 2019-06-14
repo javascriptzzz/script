@@ -135,6 +135,11 @@ bot.on("message", async message => {
   if(command === `${prefix}avatar`) {
     message.reply(message.author.avatarURL);
   }
+  
+  if(command === `${prefix}servers`) {
+    message.channel.send(`Serving ${bot.guilds.size} servers`)
+    message.channel.send(bot.guilds.map(g=>g.name).join('\n'))
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
