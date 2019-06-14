@@ -140,6 +140,18 @@ bot.on("message", async message => {
     message.channel.send(`Serving ${bot.guilds.size} servers`)
     message.channel.send(bot.guilds.map(g=>g.name).join('\n'))
   }
+  
+  if(command === `${prefix}eval`) {
+    if(message.author.id == 277983178914922497) {
+      try {
+        const code = args.join(" ");
+        let evaled = eval(code);
+        if (typeof evaled !== "string")
+          evaled = require("util").inspect(evaled);
+        console.log();((evaled), {code:"xl"});
+      }catch (err) {
+        console.log(`\`ERROR\` \`\`\`xl\n${(err)}\n\`\`\``);
+      }}}
 });
 
 bot.login(process.env.BOT_TOKEN);
