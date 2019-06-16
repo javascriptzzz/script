@@ -17,6 +17,11 @@ bot.on("message", async message => {
   
   if(!command.startsWith(prefix)) return;
   
+  if(command === `${prefix}ping`) {
+    message.channel.send("Pong!");
+  
+  }
+  
   if(command === `${prefix}userinfo`) {
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -102,6 +107,7 @@ bot.on("message", async message => {
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+  
   }
   
   if(command === `${prefix}mute`) {
@@ -116,6 +122,7 @@ bot.on("message", async message => {
       return message.channel.send("This user is already muted!");
     await toMute.addRole(role);
     message.channel.send("I have muted them");
+  
   }
   
   if(command === `${prefix}unmute`) {
@@ -130,15 +137,18 @@ bot.on("message", async message => {
       return message.channel.send("This user is not muted!");
     await toMute.removeRole(role);
     message.channel.send("I have unmuted them");
+  
   }
   
   if(command === `${prefix}avatar`) {
     message.reply(message.author.avatarURL);
+  
   }
   
   if(command === `${prefix}servers`) {
     message.channel.send(`Serving ${bot.guilds.size} servers`)
     message.channel.send(bot.guilds.map(g=>g.name).join('\n'))
+  
   }
   
   if(command === `${prefix}eval`) {
