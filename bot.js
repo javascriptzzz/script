@@ -150,7 +150,7 @@ bot.on("message", async message => {
           evaled = require("util").inspect(evaled);
         console.log();((evaled), {code:"xl"});
       }catch (err) {
-        console.log(`\`ERROR\` \`\`\`xl\n${(err)}\n\`\`\``);
+        message.channel.send(`\`ERROR\` \`\`\`xl\n${(err)}\n\`\`\``);
       }}}
 });
 
